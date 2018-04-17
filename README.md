@@ -32,7 +32,7 @@ entrypoint: /opt/umtskeeper/umtskeeper --sakisoperators 'OTHER="USBMODEM" USBMOD
 ```
 
 ### adjust umtskeeper commandline according to your setup
-The comments alreasy lead you into the right direction. Start a container manually with:
+The comments alreasy lead you into the right direction. Start a container manually with:\
 `docker run -it --rm trasba/rpi-umts /bin/bash`
 
 In the following console make sure you are in the folder /opt/umtskeeper. Then run:\
