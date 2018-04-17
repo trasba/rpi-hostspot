@@ -1,12 +1,16 @@
 FROM ubuntu:16.04
+MAINTAINER trasba
+
 RUN apt-get -q update && \
-    apt-get install -y wget \
+    apt-get install -y \
+    wget \
     ppp \
     bzip2 \
     net-tools \
     usbutils \
     python \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 # if the file is in the local folder you can use
 #ADD umtskeeper.tar.gz /opt/umtskeeper/
