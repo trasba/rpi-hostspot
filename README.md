@@ -6,6 +6,10 @@ This was tested with:
 * an Raspberry Pi 3 B+
 * an USB UMTS modem (Huawei K3765)
 
+### remark
+right now it may be necessary to set the ip address of the interface once according to the subnet specified in hostapd.conf to do this run:\
+`sudo ip addr add 192.168.9.1/24 dev wlan0`
+
 ### setup docker & docker-compose
 You need to have docker and docker-compose installed.\
 You can install it via a Webscript\
