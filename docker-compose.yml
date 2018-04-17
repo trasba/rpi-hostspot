@@ -1,0 +1,25 @@
+version: '3'
+services:
+  wifiap:
+    image: "trasba/rpi-wifiap"
+    build: "./rpi-wifiap"
+    volumes:
+      - ./hostapd.conf:/etc/hostapd/hostapd.conf
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+      - ./run.sh:/opt/run.sh
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    command: /opt/run.sh
+  umts:
+    image: "trasba/rpi-umts"
+    build: "./rpi-umts"
+    network_mode: "host"
+    # so far I was not able to work around the privileged
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    # values in <> are just examples the correct values have to be filled in
+    entrypoint: /opt/umtskeeper/umtskeeper --sakisoperators 'OTHER="USBMODEM" USBMODEM="<12d1:1465>" USBINTERFACE="<0>" SIM_PIN="<1234>" APN="<internet.eplus.de>"' --sakisswitches "--sudo --console" --devicename 'Huawei' --log --nat 'no'
+    # a good way to get the values is to run ./sakis3g and follow the error messages one at a time
