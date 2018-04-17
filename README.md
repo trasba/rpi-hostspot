@@ -62,10 +62,15 @@ and add the line:
 `@reboot /sbin/iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE`
 now when the raspberry reboots the command: `iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE` is executed.
 
-To make it work instantly you need to run the command once manually:
+To make it work instantly you need to run the command once manually:\
 `sudo iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE`
 
 Now you should be able to go online with devices connected to the Hotspot Wlan.
+
+### automatic startup on restart
+to automatically start this wifi ap on startup add the folling line to your crontab:\
+`@reboot (sleep 30s ; cd /home/pi/code/docker/compose-wifiap ; /usr/local/bin/docker-compose up -d )&`\
+where "/home/pi/code/docker/rpi-hotspot" needs to be adjusted to where the files are in your setup
 
 Leave a comment with regard to your experience
 Cheers Tobias
