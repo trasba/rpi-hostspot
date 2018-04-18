@@ -76,5 +76,5 @@ to automatically start this wifi ap on startup add the folling line to your cron
 `@reboot (sleep 30s ; cd /home/pi/code/docker/compose-wifiap ; /usr/local/bin/docker-compose up -d )&`\
 where "/home/pi/code/docker/rpi-hotspot" needs to be adjusted to where the files are in your setup
 
-Leave a comment with regard to your experience
+Leave a comment with regard to your experience\
 Cheers Tobias
