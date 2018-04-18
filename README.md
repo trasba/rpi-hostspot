@@ -1,5 +1,5 @@
-# rpi-hostspot
-raspberry pi (3 B+) wlan hostspot with docker containers
+# rpi-hotspot
+raspberry pi (3 B+) wlan hotspot with docker containers
 
 This will transform your Raspberry Pi (tested with model 3 B+) into an hotspot wlan access point.\
 This was tested with:
