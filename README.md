@@ -1,5 +1,5 @@
-# rpi-hostspot
-raspberry pi (3 B+) wlan hostspot with docker containers
+# rpi-hotspot
+raspberry pi (3 B+) wlan hotspot with docker containers
 
 This will transform your Raspberry Pi (tested with model 3 B+) into an hotspot wlan access point.\
 This was tested with:
@@ -32,7 +32,7 @@ entrypoint: /opt/umtskeeper/umtskeeper --sakisoperators 'OTHER="USBMODEM" USBMOD
 ```
 
 ### adjust umtskeeper commandline according to your setup
-The comments alreasy lead you into the right direction. Start a container manually with:
+The comments alreasy lead you into the right direction. Start a container manually with:\
 `docker run -it --rm trasba/rpi-umts /bin/bash`
 
 In the following console make sure you are in the folder /opt/umtskeeper. Then run:\
@@ -76,5 +76,5 @@ to automatically start this wifi ap on startup add the folling line to your cron
 `@reboot (sleep 30s ; cd /home/pi/code/docker/compose-wifiap ; /usr/local/bin/docker-compose up -d )&`\
 where "/home/pi/code/docker/rpi-hotspot" needs to be adjusted to where the files are in your setup
 
-Leave a comment with regard to your experience
+Leave a comment with regard to your experience\
 Cheers Tobias
